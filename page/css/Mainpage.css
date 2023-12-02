@@ -1,18 +1,28 @@
 .container{
     width: 100%;
-    height: 5000px;
+    height: 100%;
 }
 
 .header{
     width: 100%;
-    height: 250px;
+    height: 200px;
     background-color:#eee;
 }
 
+.header_login{
+    font-size: 50px;   
+    text-align: right;
+    margin-right: 100px;
+}
+
+.main_content{
+    width: 100%;
+    height: 1000px;
+}
 
 .main_search{
     width: 100%;
-    height: 35%;
+    height: 40%;
     background-image: url(../img/main_searchbgimg.png);
     background-repeat : no-repeat;
     background-size : contain;
@@ -20,13 +30,16 @@
 
 .main_picutures{
     width: 100%;
-    height: 65%;
-    background-color:white;
+    height: 60%;
+    background-color:red;
+    margin-bottom: 0;
     
 }
 
 .footer{
     width: 100%;
-    height: 400px;
+    height: 200px;
+    border-top: 5px solid black;
+   
 }
 
