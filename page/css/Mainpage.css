@@ -83,6 +83,35 @@ div{
     height: 650px;
     background-color: #D8D8D8;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_picutures_separator {
+    position: relative;
+    top: 15px;
+    height: 480px; /* .rectangle의 높이와 동일하게 설정 */
+    width: 2px; /* 구분선의 너비 */
+    background-color: #eee; /* 구분선의 색상 */
+  }
+
+
+.main_picutures_today{
+ margin: 30px;  
+}
+
+.main_picutures_sub{
+   width: 400px;
+   height: 480px;
+   background-color: aqua;
+}
+
+.main_picutures_today_viewmore{
+    padding-top: 5px;
+    float: right;
+    color: gray;
+    cursor: pointer;
 }
 
 .footer{
