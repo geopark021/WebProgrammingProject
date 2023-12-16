@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Connect Recrods</title>
-    <link href="../css/Bookreviewpage_content.css" rel="stylesheet">
+    <link href="../css/Registerpage.css" rel="stylesheet">
 
 
 </head>
@@ -12,48 +12,35 @@
     
     <!-- 헤더 시작 -->
     <header class="header">
-        <div class="header_box" style="flex-grow: 2">
+        <div class="header_box" style="flex-grow: 3">
             <img src="../img/Group 13.png" style="height: 100%; padding-top: 5px;"></div>
-        <div class="header_box" style="flex-grow: 2;">
-            <p class="header_login" style="flex-grow: 3; font-size: 25px; font-weight: 600; color: #3D2500;"> 
-                독후감 작성 페이지</p>
+        <div class="header_box" style="flex-grow: 4;">
+            <p class="header_login" style="flex-grow: 4;  font-size: 25px; font-weight: 600; color: #3D2500;"> 
+            회원가입 페이지</p>
         </div>
-        <div class="header_mypage"><p class="header_login" style="flex-grow: 3;"> 
-            마이 페이지</p> </div>
-        <div class="header_mypage"><p class="header_login" style="flex-grow: 3;"> 
-            회원 님</p> </div>
+        <div class="header_mypage"><p class="header_login" style="flex-grow: 1;"> 
+            로그인</p> </div>
     </header>
     <!-- 헤더 끝 -->
 
     <!-- 메인 시작 -->
     <div class="main_content">
-    <div class="main_adage"><span style="font-size: 20px;">"책 속에서 우리는 또 다른 삶을 산다"</span></div> 
+    <div class="main_adage"><span style="font-size: 20px;">환영합니다. 기록을 공유하세요</span></div> 
    
     <!-- 작성 폼 시작 -->
-    <form>
-        <div class="form-group">
-          <label for="name">책 제목</label>
-          <input type="text" id="name" name="name" placeholder="책 제목 입력"
-            style="width: 725px; font-size: 14px;  padding: 10px;
-                border-color: #CDCDCD;"
-          >
-        </div>
-        <div class="form-group">
-            <label for="user">작성자</label> <span>회원 님</span>
-        </div>
-        <div class="form-group">
-          <label for="date">작성일자</label> <span>2023.11.18 토요일 13시 26분</span>
-        </div>
-        <div class="form-group">
-            <label for="content">독후감 내용</label> 
-            <textarea placeholder="독후감 내용을 작성해주세요"></textarea>
-        </div>
-        <div class="form-group_btn">
-            <input class="input_button" type="button" value="취소" style="background-color:#CAC0B1">
-            <input class="input_button" type="button" value="다음  ->" style="background-color:#7c633d">
-            
-        </div>
-      </form>
+    <div class="login-container">
+        <h2>Hello Writers!</h2>
+        <form action="#" method="post">
+            <input class="input_login" type="text" name="username" placeholder="Name" required>
+            <input class="input_login" type="text" name="password"  placeholder="Email" required>
+            <input class="input_login" type="text" name="password"  placeholder="Password" required>
+            <div class="actions">
+                <input id="check" type="checkbox"><span>I've read and agree to <strong>Therms & Conditions</strong></span>
+            </div>
+            <button type="submit">CREATE ACCCOUNT</button>
+        </form>
+    </div>
+    
     <!-- 작성 폼 끝 -->
 
     </div>
