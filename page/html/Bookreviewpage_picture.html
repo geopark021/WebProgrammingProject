@@ -42,8 +42,7 @@
             <label>추천하는 그림</label>
         </div>
         <div class="form-group">
-            <div class="bookreview_recommend_picture"></div>
-            <input class="checkbox" type="checkbox">
+            <div class="bookreview_recommend_picture" value="0" onclick="handleClick(this)"></div>
         </div>
         <div class="form-group">
             <label>이 그림은 어떠세요? </label> 
@@ -51,7 +50,23 @@
                 <img src="../img/refresh_outline_24px.png" alt="이미지 설명">
             </button>
         </div>
+
+        <div class="form-group" style="margin-left: 200px; ">
+            <!-- 첫 번째 자식 div -->
+            <div class="child-div" value="1" onclick="handleClick(this)">
+            </div>
+        
+            <!-- 두 번째 자식 div -->
+            <div class="child-div" value="2" onclick="handleClick(this)">
+            </div>
+        
+            <!-- 세 번째 자식 div -->
+            <div class="child-div" value="3" onclick="handleClick(this)">
+            </div>
+          </div>
+
         <div class="form-group_btn">
+            <p id="selected_picture"></p>
             <input class="input_button" type="button" value="취소" style="background-color:#CAC0B1">
             <input class="input_button" type="button" value="다음  ->" style="background-color:#7c633d">
             
@@ -83,6 +98,31 @@
     <!-- 푸터 끝 -->
 </div>
 <!-- 메인 끝-->
+
+<script>
+    let selectedDiv = null; // 선택된 div를 저장하는 변수
+
+    window.onload = function () {
+      const initialDiv = document.querySelector('[value="0"]');
+      if (initialDiv) {
+        handleClick(initialDiv);
+      }
+    };
+
+    function handleClick(clickedDiv) {
+      if (selectedDiv) {
+        // 이미 선택된 div가 있다면 선택 해제
+        selectedDiv.classList.remove('selected');
+      }
+      const value = clickedDiv.getAttribute('value');
+      console.log('Selected Value:', value);
+
+      // 선택된 div로 설정
+      clickedDiv.classList.add('selected');
+      selectedDiv = clickedDiv;
+    }
+  </script>
+
 </body>
 </html>
 
