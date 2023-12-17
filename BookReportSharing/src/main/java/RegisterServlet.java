@@ -46,7 +46,7 @@ public class RegisterServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		// 기본 이미지 경로 설정
-	    String defaultImagePath = "img/defaultProfile.png"; // 웹 애플리케이션의 기본 프로필 이미지 경로
+	    String defaultImagePath = "../img/defaultProfile.png"; // 웹 애플리케이션의 기본 프로필 이미지 경로
 		
 		// 유효성 체크
 		
@@ -66,7 +66,7 @@ public class RegisterServlet extends HttpServlet {
 			String jdbc_url = "jdbc:mysql://localhost:3306/book_report_sharing?serverTimezone=UTC";
 			conn = DriverManager.getConnection(jdbc_url, "root", "1234"); // 본인이 만든 데이터베이스 user, password
 			user_info_sql = "INSERT INTO user_tbl (uemail, password, unickname, profileImg) VALUES (?, ?, ?, ?)";
-			pstmt = conn.prepareStatement(user_info_sql);
+			pstmt = conn.prepareStatement(user_info_sql); // pstmt 객체 생성 
 			
 			pstmt.setString(1, email);
 		    pstmt.setString(2, password); // 실제 환경에서는 비밀번호 암호화 필요
