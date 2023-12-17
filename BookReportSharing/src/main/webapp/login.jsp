@@ -37,7 +37,7 @@
 	        pstmt = conn.prepareStatement(search_sql);  // 쿼리 준비, 실행x
 	        pstmt.setString(1, input_username); // ? placeholder에 들어가는 내용
 	        		  
-	        rs = pstmt.executeQuery();
+	        rs = pstmt.executeQuery(); // sql 문 실행 
 	          
 	        if(rs.next()){
 	        	String retrivedPassword = rs.getString("password"); // 데이터베이스에서 조회한 비밀번호
@@ -50,6 +50,7 @@
 	        // 사용자의 username과 password 가 데이터베이스에 존재하는 경우 
 	        if(isValidUser){
 	        	out.println("<p> 로그인 성공 ! </p>");
+	        	//response.sendRedirect("page/html/Loginpage.html");
 	        }else {
 	        	out.println("<p> 로그인 실패. 유효하지 않은 username과 password를 입력했습니다.</p>");
 	        }
@@ -60,6 +61,7 @@
 			out.println("<p>Error : " + e.getMessage() + "</p>");
 			
 		}finally {
+			
 			if(rs!= null) try { rs.close();} catch (SQLException e ) {}
 			if(pstmt != null) try { pstmt.close();} catch (SQLException e ) {}
 			if(conn != null) try { conn.close();} catch (SQLException e ) {}

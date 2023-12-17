@@ -7,11 +7,13 @@
 </head>
 <body>
 <%
-    // form으로 받은 내용 입력 
+
+	// register.jsp
+    // form으로 받은 내용 저장 
     String username = request.getParameter("username");
     String email = request.getParameter("email");
     String password = request.getParameter("password");
-    String defaultImagePath = "../img/defaultProfile.png"; // Adjust path as needed
+    String defaultImagePath = "../img/defaultProfile.png"; // 회원가입 후 적용할 사용자 기본 프로필 사진 경로 
     String user_info_sql = "INSERT INTO user_tbl (uemail, password, unickname, profileImg) VALUES (?, ?, ?, ?)";
     
     // 객체 초기화
@@ -32,22 +34,22 @@
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String jdbc_url = "jdbc:mysql://localhost:3306/book_report_sharing?serverTimezone=UTC";
-            conn = DriverManager.getConnection(jdbc_url, "root", "1234"); // Use your database credentials
+            conn = DriverManager.getConnection(jdbc_url, "root", "1234"); 
 
             pstmt 
             = conn.prepareStatement(user_info_sql);
             pstmt.setString(1, email);
-            pstmt.setString(2, password); // In a real scenario, password should be hashed
+            pstmt.setString(2, password); // 실제 구현 시 해시 함수 돌려야함 
             pstmt.setString(3, username);
             pstmt.setString(4, defaultImagePath);
 
             int rowsAffected = pstmt.executeUpdate();
             if (rowsAffected > 0) {
-                // Registration successful
+                // 회원가입 성공(데이터베이스에 insert 성공)
                 response.sendRedirect("page/html/Loginpage.html");
                 return;
             } else {
-                // Registration failed
+                // 회원가입 실패 
                 errorMessage = "데이터 삽입에 실패했습니다. 다시 시도해주세요.";
             }
         } catch (Exception e) {

@@ -30,7 +30,8 @@
     <div class="main_adage"><span style="font-size: 20px;">"책 속에서 우리는 또 다른 삶을 산다"</span></div> 
    
     <!-- 작성 폼 시작 -->
-    <form>
+    <form action="../../processContent.jsp" method="post">
+
         <div class="form-group">
           <label for="name">책 제목</label>
           <input type="text" id="name" name="name" placeholder="책 제목 입력"
@@ -46,11 +47,11 @@
         </div>
         <div class="form-group">
             <label for="content">독후감 내용</label> 
-            <textarea placeholder="독후감 내용을 작성해주세요"></textarea>
+            <textarea id="content" name="content" placeholder="독후감 내용을 작성해주세요"></textarea>
         </div>
-        <div class="form-group_btn">
-            <input class="input_button" type="button" value="취소" style="background-color:#CAC0B1">
-            <input class="input_button" type="button" value="다음  ->" style="background-color:#7c633d">
+  		 <div class="form-group_btn">
+            <input class="input_button" type="button" value="취소"  onclick="window.location.href='Mainpage.html';" style="background-color:#CAC0B1">
+            <input class="input_button" type="submit" value="다음  ->" style="background-color:#7c633d">
             
         </div>
       </form>
@@ -80,8 +81,10 @@
     <!-- 푸터 끝 -->
 </div>
 <!-- 메인 끝-->
+
 </body>
 </html>
+
 
 
 

@@ -30,7 +30,10 @@
     <div class="main_adage"><span style="font-size: 20px; font-weight: 600; color: #3D2500;">그림 선택하기</span></div> 
    
     <!-- 작성 폼 시작 -->
-    <form>
+    <form action="../../processPicture.jsp" method="post">
+		<input type="hidden" name="action" value="savePicture"> <!-- 추가된 숨겨진 필드: 작업 유형을 지정 -->
+	    <input type="hidden" id="selectedPicture" name="selectedPicture" value=""> <!-- 추가된 숨겨진 필드: 선택된 그림 ID -->
+
         <div class="form-group">
             <label for="user">작성자</label> <span style="color:#808080">#자유 #하늘 #시원함</span>
         </div>
@@ -67,8 +70,8 @@
 
         <div class="form-group_btn">
             <p id="selected_picture"></p>
-            <input class="input_button" type="button" value="취소" style="background-color:#CAC0B1">
-            <input class="input_button" type="button" value="다음  ->" style="background-color:#7c633d">
+            <input class="input_button" type="button" value="취소" onclick="window.history.back();" style="background-color:#CAC0B1">
+            <input class="input_button" type="submit" value="다음  ->" style="background-color:#7c633d">
             
         </div>
       </form>
@@ -98,7 +101,7 @@
     <!-- 푸터 끝 -->
 </div>
 <!-- 메인 끝-->
-
+<!-- 수정 전
 <script>
     let selectedDiv = null; // 선택된 div를 저장하는 변수
 
@@ -122,6 +125,25 @@
       selectedDiv = clickedDiv;
     }
   </script>
+-->
+
+<script>
+    let selectedDiv = null; // 선택된 div를 저장하는 변수
+
+    function handleClick(clickedDiv) {
+        // 기존에 선택된 그림이 있으면 선택 해제
+        if (selectedDiv) {
+            selectedDiv.classList.remove('selected');
+        }
+        
+        // 새로 클릭된 그림을 선택된 것으로 설정
+        clickedDiv.classList.add('selected');
+        selectedDiv = clickedDiv;
+        
+        // 숨겨진 필드에 선택된 그림의 value를 설정
+        document.getElementById('selectedPictureValue').value = clickedDiv.getAttribute('value');
+    }
+</script>
 
 </body>
 </html>
