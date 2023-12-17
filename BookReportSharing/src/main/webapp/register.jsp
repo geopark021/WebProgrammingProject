@@ -7,27 +7,27 @@
 </head>
 <body>
 <%
-    // Initialize variables
+    // form으로 받은 내용 입력 
     String username = request.getParameter("username");
     String email = request.getParameter("email");
     String password = request.getParameter("password");
     String defaultImagePath = "../img/defaultProfile.png"; // Adjust path as needed
     String user_info_sql = "INSERT INTO user_tbl (uemail, password, unickname, profileImg) VALUES (?, ?, ?, ?)";
     
-    // Initialize resources
+    // 객체 초기화
     Connection conn = null; 
     PreparedStatement pstmt = null;
     boolean hasError = false;
     String errorMessage = "";
 
-    // Validate input
+    // 유효성 검사 
     if(username == null || email == null || password == null || 
        username.isEmpty() || email.isEmpty() || password.isEmpty()) {
         hasError = true;
         errorMessage = "모든 항목을 빠짐없이 입력해주시키 바랍니다.";
     }
 
-    // If no error, try to register the user
+    // 에러 없을 때 user_tbl에 insert 진행
     if (!hasError) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -58,11 +58,11 @@
         }
     }
 
-    // Show error message if there was a problem
+    // 에러 있을 때 표시 
     if (hasError) {
         out.println("<p style='color: red;'>" + errorMessage + "</p>");
     }
 %>
-<!-- Registration form or other content goes here -->
+
 </body>
 </html>
