@@ -18,7 +18,7 @@
             <p class="header_login" style="flex-grow: 4;  font-size: 25px; font-weight: 600; color: #3D2500;"> 
                 마이 페이지</p>
         </div>
-        <div class="header_mypage"><p class="header_login" style="flex-grow: 1;"> 
+        <div class="header_mypage"><p class="header_login" style="flex-grow: 1; margin-right:25px"> 
             회원 님</p> </div>
     </header>
     <!-- 헤더 끝 -->
@@ -36,10 +36,54 @@
     </div>
     
     <div class="right-panel">
-        <p>Right Panel</p>
-    </div>
-   
+   	 	<div class="post-container" onclick="toggleClicked(this)">
+    		<img src="../img/main_searchbgimg.png" alt="Book Cover">
+    		<div class="post-content">
+    			<h2>책 제목</h2>
+    			<p>일시: 2023-12-17</p>
+    			<span>독후감 내용이 여기에 들어갑니다.</span>
+    		</div>
+    	</div>
+	
+	
+   	 	<div class="post-container" onclick="toggleClicked(this)">
+    		<img src="../img/main_searchbgimg.png" alt="Book Cover">
+    		<div class="post-content">
+    			<h2>책 제목</h2>
+    			<p>일시: 2023-12-17</p>
+    			<span>독후감 내용이 여기에 들어갑니다.</span>
+    		</div>
+    	</div>		
+		
+	   	 	<div class="post-container" onclick="toggleClicked(this)">
+    		<img src="../img/main_searchbgimg.png" alt="Book Cover">
+    		<div class="post-content">
+    			<h2>책 제목</h2>
+    			<p>일시: 2023-12-17</p>
+    			<span>독후감 내용이 여기에 들어갑니다.</span>
+    		</div>
+    	</div>	
+    	
+    	   	 	<div class="post-container" onclick="toggleClicked(this)">
+    		<img src="../img/main_searchbgimg.png" alt="Book Cover">
+    		<div class="post-content">
+    			<h2>책 제목</h2>
+    			<p>일시: 2023-12-17</p>
+    			<span>독후감 내용이 여기에 들어갑니다.</span>
+    		</div>
+    	</div>	
+    	
+    	   	 	<div class="post-container" onclick="toggleClicked(this)">
+    		<img src="../img/main_searchbgimg.png" alt="Book Cover">
+    		<div class="post-content">
+    			<h2>책 제목</h2>
+    			<p>일시: 2023-12-17</p>
+    			<span>독후감 내용이 여기에 들어갑니다.</span>
+    		</div>
+    	</div>		
 
+
+    </div>
     </div>
     <!-- 푸터 시작  -->
     <footer class="footer">
@@ -62,6 +106,13 @@
     <!-- 푸터 끝 -->
 </div>
 <!-- 메인 끝-->
+
+<script>
+  function toggleClicked(element) {
+    // 클릭 상태 토글
+    element.classList.toggle("clicked");
+  }
+</script>
 </body>
 </html>
 

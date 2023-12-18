@@ -92,8 +92,78 @@ div{
 
 .right-panel {
     flex: 4;
+    overflow-y: auto;
     border: none; /* 우측 패널은 오른쪽에 border가 이미 있으므로 제거 */
 }
+
+    /* 스크롤 스타일 (크롬, 사파리, 엣지 등) */
+    .right-panel::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .right-panel::-webkit-scrollbar-thumb {
+      background-color: #FFE049; /* 스크롤바의 색깔 지정 */
+      border-radius: 5px;
+    }
+
+
+/* 게시글 컨테이너 스타일 */
+    .post-container {
+    flex: none;
+      margin-top:30px;
+      margin-left:30px;
+      width: 700px;
+      height: 400px;
+      background-color: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    /* 이미지 스타일 */
+    .post-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 1; /* 초기 투명도 설정 */
+      transition: opacity 0.3s ease, filter 0.3s ease; /* filter 속성 추가 */
+    }
+
+    /* 텍스트 요소 스타일 */
+    .post-content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px;
+      box-sizing: border-box;
+      color: #fff;
+      opacity: 0; /* 초기에는 숨김 */
+      transition: opacity 0.3s ease;
+    }
+
+    /* 호버 및 클릭 효과 */
+    .post-container:hover img {
+      opacity: 0.8;
+      filter: brightness(0.7); /* 이미지 어두운 효과 추가 */
+    }
+
+    .post-container.clicked img {
+      opacity: 0.8;
+      filter: brightness(0.7); /* 이미지 어두운 효과 추가 */
+    }
+
+    .post-container:hover .post-content,
+    .post-container.clicked .post-content {
+      opacity: 1;
+    }
+
+    /* 클릭 효과 */
+    .post-container.clicked {
+      transform: scale(1.1);
+    }
+
 
 .footer{
     
