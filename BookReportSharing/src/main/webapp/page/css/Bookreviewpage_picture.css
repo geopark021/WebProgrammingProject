@@ -90,6 +90,13 @@ form {
     background-color: aqua;
     cursor: pointer;
   }
+  .bookreview_recommend_picture img {
+/*	  width: 300px;
+	  height: 300px;
+	  border: 1px aqua solid;
+	  object-fit: cover; */
+  }
+  
 
   .selected {
     border-width: 3px;
@@ -119,14 +126,13 @@ form {
     text-align: center;
     cursor: pointer;
     background-color: aqua;
+    overflow: hidden;
   }
 
   /* 체크박스 스타일 */
   .custom-checkbox {
     margin: 10px; /* 체크박스와 자식 div 사이의 간격 조절 */
   }
-
-
 
 
 .refresh_btn{

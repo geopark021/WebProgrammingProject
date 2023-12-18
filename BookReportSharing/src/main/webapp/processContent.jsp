@@ -15,7 +15,7 @@
 	session.setAttribute("bookname", request.getParameter("name"));
 	session.setAttribute("content", request.getParameter("content"));
 	// Bookreviewpage_picture.html로 리다이렉트
-	response.sendRedirect("page/html/Bookreviewpage_picture.html");
+	response.sendRedirect("Bookreviewpage_picture.jsp");
 %>
 
 </body>
