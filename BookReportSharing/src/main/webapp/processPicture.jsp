@@ -13,6 +13,7 @@
     // 세션에서 데이터 검색
     String bookName = (String) session.getAttribute("bookname");
 	String content = (String) session.getAttribute("content");
+	// 세션 id login.id에서 가져오기 - select 이용 
 	
   
     // 사용자가 선택한 그림 정보 처리. 사용자가 선택한 그림의 record_img_id를 세션에서 가져오기

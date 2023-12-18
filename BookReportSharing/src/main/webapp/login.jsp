@@ -50,7 +50,7 @@
 	        // 사용자의 username과 password 가 데이터베이스에 존재하는 경우 
 	        if(isValidUser){
 	        	out.println("<p> 로그인 성공 ! </p>");
-	        	//response.sendRedirect("page/html/Loginpage.html");
+	        	response.sendRedirect("/BookReportSharing/Mainpage.jsp?id="+input_username );
 	        }else {
 	        	out.println("<p> 로그인 실패. 유효하지 않은 username과 password를 입력했습니다.</p>");
 	        }
