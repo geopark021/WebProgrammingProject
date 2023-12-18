@@ -36,8 +36,7 @@
             String jdbc_url = "jdbc:mysql://localhost:3306/book_report_sharing?serverTimezone=UTC";
             conn = DriverManager.getConnection(jdbc_url, "root", "1234"); 
 
-            pstmt 
-            = conn.prepareStatement(user_info_sql);
+            pstmt = conn.prepareStatement(user_info_sql);
             pstmt.setString(1, email);
             pstmt.setString(2, password); // 실제 구현 시 해시 함수 돌려야함 
             pstmt.setString(3, username);
